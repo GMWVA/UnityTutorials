@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public float speed = 10.0f;
+    [SerializeField]
+    private float _speed = 25.0f;
 
 	void Start ()
     {
@@ -13,7 +14,7 @@ public class Laser : MonoBehaviour
 	
 	void Update ()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * _speed * Time.deltaTime);
 
         if(transform.position.y > 5.5f)
         {

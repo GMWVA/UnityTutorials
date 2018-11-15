@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject laserPrefab;
+    [SerializeField]
+    private GameObject _laserPrefab;
 
     [SerializeField]
-    public float speed = 5.0f;
+    private float _fireRate = 0.25f;
+
+    private float _canFire = 0.0f;
+
+    [SerializeField]
+    private float _speed = 5.0f;
 
 	void Start ()
     {
@@ -18,11 +24,19 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            Instantiate(laserPrefab, transform.position + new Vector3(0, 0.88f, 0), Quaternion.identity);
+            Shoot();
         }
+    }
 
+    private void Shoot()
+    {
+        if (Time.time > _canFire)
+        {
+            Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.88f, 0), Quaternion.identity);
+            _canFire = Time.time + _fireRate;
+        }
     }
 
     private void Movement()
@@ -30,8 +44,8 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        transform.Translate(Vector3.up * speed * verticalInput * Time.deltaTime);
+        transform.Translate(Vector3.right * _speed * horizontalInput * Time.deltaTime);
+        transform.Translate(Vector3.up * _speed * verticalInput * Time.deltaTime);
 
         if (transform.position.y > 0)
         {
@@ -51,4 +65,8 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(9.5f, transform.position.y, 0);
         }
     }
+
+
+
+
 }
