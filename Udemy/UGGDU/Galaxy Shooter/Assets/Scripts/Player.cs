@@ -2,23 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//collision between enemy and player
-//collision between enemy and laser
-//if enemy collision laser
-//enemy and laser destroy
-//Player has 3 lives
-//if enemy collision player -1 life and enemy destroyed
-//if player life = 0 player is also destroyed
-
-
-
-
-
 public class Player : MonoBehaviour
 {
     public bool canTripleShot = false;
     public bool isSpeedBoostActive = false;
     public int lives = 3;
+
+    [SerializeField]
+    private GameObject _explosionPrefab;
 
     [SerializeField]
     private GameObject _laserPrefab;
@@ -90,6 +81,7 @@ public class Player : MonoBehaviour
 
         if(lives < 1)
         {
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

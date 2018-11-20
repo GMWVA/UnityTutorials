@@ -146,6 +146,8 @@ MonoBehaviour:
   canTripleShot: 0
   isSpeedBoostActive: 0
   lives: 3
+  _ExplosionPrefab: {fileID: 1611621988349634, guid: 8ab1f6c9152aeb548b1f260a8aad37f0,
+    type: 2}
   _laserPrefab: {fileID: 1270537378108694, guid: acce96ebdc238264c86afb5b8f7da8eb,
     type: 2}
   _tripleShotPrefab: {fileID: 1768774455710324, guid: f830dbbd205126f4ea02d3b0122ef8e5,
