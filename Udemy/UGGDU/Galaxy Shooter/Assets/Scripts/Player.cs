@@ -2,10 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//collision between enemy and player
+//collision between enemy and laser
+//if enemy collision laser
+//enemy and laser destroy
+//Player has 3 lives
+//if enemy collision player -1 life and enemy destroyed
+//if player life = 0 player is also destroyed
+
+
+
+
+
 public class Player : MonoBehaviour
 {
     public bool canTripleShot = false;
     public bool isSpeedBoostActive = false;
+    public int lives = 3;
 
     [SerializeField]
     private GameObject _laserPrefab;
@@ -68,6 +81,16 @@ public class Player : MonoBehaviour
         else if (transform.position.x < -9.5f)
         {
             transform.position = new Vector3(9.5f, transform.position.y, 0);
+        }
+    }
+
+    public void Damage()
+    {
+        lives--;
+
+        if(lives < 1)
+        {
+            Destroy(this.gameObject);
         }
     }
 
