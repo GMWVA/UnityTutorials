@@ -10,8 +10,11 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private float _speed = 3.0f;
 
+    private UIManager _uiManager;
+
     void Start()
     {
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         transform.position = new Vector3(Random.Range(-7.5f, 7.5f), 7, 0);
     }
 
@@ -42,6 +45,7 @@ public class EnemyAI : MonoBehaviour
                 }
                 Destroy(other.gameObject);
                 Instantiate(_enemyExplosionPrefab, transform.position, Quaternion.identity);
+                _uiManager.UpdateScore();
                 Destroy(this.gameObject);
             }
         }

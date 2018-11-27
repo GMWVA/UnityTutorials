@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public Sprite[] lives;
     public Image livesImageDisplay;
+    public Text scoreText;
+    public int score;
 
     public void UpdateLives(int currentLives)
     {
@@ -16,6 +18,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScore()
     {
+        score += 10;
 
+        scoreText.text = "Score: " + score;
     }
 }
