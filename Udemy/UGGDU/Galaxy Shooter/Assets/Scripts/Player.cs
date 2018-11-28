@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private float _speed = 5.0f;
 
     private UIManager _uiManager;
+    private GameManager _gameManager;
 
 	void Start ()
     {
@@ -42,6 +43,8 @@ public class Player : MonoBehaviour
         {
             _uiManager.UpdateLives(lives);
         }
+
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 	
 	void Update ()
@@ -104,6 +107,8 @@ public class Player : MonoBehaviour
         if(lives < 1)
         {
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            _gameManager.gameOver = true;
+            _uiManager.ShowTitleScreen();
             Destroy(this.gameObject);
         }
     }
