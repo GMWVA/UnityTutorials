@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     private UIManager _uiManager;
     private GameManager _gameManager;
+    private SpawnManager _spawnManager;
 
 	void Start ()
     {
@@ -45,6 +46,14 @@ public class Player : MonoBehaviour
         }
 
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+
+        if (_spawnManager != null)
+        {
+            _spawnManager.StartSpawnRoutines();
+        }
+
 	}
 	
 	void Update ()
