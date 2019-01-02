@@ -75,11 +75,11 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Repos/UnityTutorials/Udemy/UGGDU/Galaxy Shooter/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Repos/UnityTutorials/Udemy/UGGDU/Galaxy Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Repos/UnityTutorials/Udemy/UGGDU/Galaxy Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Repos/UnityTutorials/Udemy/UGGDU/Galaxy Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Repos/UnityTutorials/Udemy/UGGDU/Galaxy Shooter/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
