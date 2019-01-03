@@ -12,6 +12,11 @@ public class Powerup : MonoBehaviour
 	void Update ()
     {
         Movement();
+
+        if (transform.position.y < -7)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     private void Movement()
