@@ -1,2 +1,4 @@
 C:\Repos\UnityTutorials\Udemy\UGGDU\Galaxy Shooter\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Repos\UnityTutorials\Udemy\UGGDU\Galaxy Shooter\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+E:\Repos\UnityTutorials\Udemy\UGGDU\Galaxy Shooter\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+E:\Repos\UnityTutorials\Udemy\UGGDU\Galaxy Shooter\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

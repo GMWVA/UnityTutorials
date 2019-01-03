@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
     private GameManager _gameManager;
     private SpawnManager _spawnManager;
+    private AudioSource _audioSource;
 
 	void Start ()
     {
@@ -53,6 +54,8 @@ public class Player : MonoBehaviour
         {
             _spawnManager.StartSpawnRoutines();
         }
+
+        _audioSource = GetComponent<AudioSource>();
 
 	}
 	
@@ -126,6 +129,7 @@ public class Player : MonoBehaviour
     {
         if (Time.time > _canFire)
         {
+            _audioSource.Play();
             if(canTripleShot == true)
             {
                 Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
